@@ -1,0 +1,48 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="col-md-9 well">
+        <div class="row">
+        <div class="col-md-4 well">
+            <div class="coursename"> Course Name is : {{course.coursename}} </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-offset-1 col-md-7 well">
+            <div class="course_description"> Course Description : {{course.description}}
+
+            </div>
+        </div>
+        <div class="col-md-4 well">
+            Start Date : {{course.start_date}}<br>
+            Finish Date : {{course.finish_date}}
+        </div>
+        </div>
+        <div></div>
+    </div>
+    <div class="col-md-3 well">
+        Course Hour : {{course.duration}}
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-9 col-md-2 well"> 
+            <button class="btn-primary"><a href={% url 'edit_course' pk=course.id%}>Edit</a></button>
+            
+            <button class="btn-danger"> <a href={% url 'delete_course' pk=course.id %}> Destroy </a></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

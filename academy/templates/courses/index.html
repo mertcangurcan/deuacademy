@@ -1,0 +1,28 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    
+<div class="container">
+    <div class="col-md-12 well">
+    {% for course in courses %}
+    <div class="row">
+            <h1>  <a href={% url 'course' pk=course.id %}> {{course.coursename}} </a></h1>  
+    </div>
+    {% endfor %}
+    </div>
+    <div class="col-md-offset-10 col-md-2 well">
+    <button class="btn-success"><a href={% url 'form' %}> New Course </a></button>
+
+ 
+</body>
+</html>
